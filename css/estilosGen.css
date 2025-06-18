@@ -1,0 +1,29 @@
+nav{
+    background-color: #011936ff;
+}
+.icono {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.rotar {
+  transform: rotate(180deg);
+}
+#grafico {
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+.bg-img-login {
+  background-image: url('img/running.png');
+  background-size: cover;
+  background-position: center;
+}
+#userDropdown {
+  display: none;
+}
+#loginBtn {
+  display: flex;
+}
