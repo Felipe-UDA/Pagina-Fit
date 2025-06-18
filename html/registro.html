@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilosGen.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Registro</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-collapse-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="seguimiento.html">Fitness</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" id="boton">
+                    <i class="bi bi-chevron-compact-down icono" id="icono"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="seguimiento.html">Seguimiento de rutina</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="vh-100 d-flex bg-light">
+        <div class="col-md-5 d-none d-md-block p-0">
+            <div class="h-100 w-100 bg-cover" style="background-image: url('img/running.png'); background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="col-12 col-md-7 d-flex align-items-center justify-content-center p-4">
+            <div class="shadow p-4 rounded bg-white w-50" style="min-width: 450px;">
+                <h2 class="text-center mb-4">Registro de usuario</h2>
+                <form id="registroForm">
+                    <div class="mb-3 d-flex justify-content-around align-items-center gap-2">
+                        <div class="input-group d-flex align-items-center">
+                            <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                            <input type="text" class="form-control" id="name" placeholder="Nombre" required>
+                        </div>
+                        <div class="input-group d-flex justify-content-center align-items-center">
+                            <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                            <input type="text" class="form-control" id="lastname" placeholder="Apellido" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="foto" class="form-label">Foto de perfil</label>
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-camera-fill"></i></div>
+                            <input type="file" class="form-control" id="foto" accept="image/*" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-envelope-fill"></i></div>
+                            <input type="email" class="form-control" id="correo" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                            <input type="password" class="form-control" id="pass" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" id="registrar">Registrar</button>
+                </form>
+                <hr>
+                <div class="text-center p-2 mb-2">
+                    <p>¿Ya tienes una cuenta? <span><a href="login.html">Inicia sesión</a></span>.</p>
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="js/registerScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
