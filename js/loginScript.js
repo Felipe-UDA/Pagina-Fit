@@ -13,4 +13,40 @@ document.getElementById("loginForm").addEventListener("submit", function(form){
         alert("Correo o contraseña incorrectos.");
     }
 });
-//falta agregar funcionalidad a olvido de contraseña
+document.getElementById('forgotPasswordLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('resetPasswordForm').classList.remove('d-none');
+});
+document.getElementById('checkCorreoBtn').addEventListener('click', () => {
+    const correo = document.getElementById('resetCorreo').value.trim();
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
+    const userIndex = users.findIndex(u => u.correo === correo);
+
+    if (userIndex !== -1) {
+        document.getElementById('newPasswordFields').classList.remove('d-none');
+        document.getElementById('checkCorreoBtn').classList.add('d-none');
+        document.getElementById('confirmResetBtn').dataset.userIndex = userIndex;
+    } else {
+        alert('Correo no encontrado.');
+    }
+});
+//cambio de contraseña
+document.getElementById('confirmResetBtn').addEventListener('click', () => {
+    const newPassword = document.getElementById('newPassword').value;
+    const repeatPassword = document.getElementById('repeatPassword').value;
+    const userIndex = document.getElementById('confirmResetBtn').dataset.userIndex;
+    if (!newPassword || !repeatPassword) {
+        alert("Debes completar ambos campos.");
+        return;
+    }
+
+    if (newPassword !== repeatPassword) {
+        alert("Las contraseñas no coinciden.");
+        return;
+    }
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
+    users[userIndex].password = newPassword;
+    localStorage.setItem('users', JSON.stringify(users));
+    alert("¡Contraseña actualizada con éxito!");
+    location.reload();
+});
