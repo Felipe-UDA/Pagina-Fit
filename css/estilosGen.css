@@ -1,20 +1,51 @@
-nav{
-    background-color: #011936ff;
+:root {
+  --oxford-blue: #011936;
+  --olivine: #9fc490;
+  --jordy-blue: #84afe6;
+  --maya-blue: #79beee;
 }
-.icono {
-  transition: transform 0.3s ease;
-  display: inline-block;
+
+/* Fondo y color general */
+body {
+  background-color: white;
+  color: black;
 }
-.rotar {
-  transform: rotate(180deg);
+
+/* Navbar personalizada */
+.navbar {
+  background-color: var(--jordy-blue) !important;
 }
-#grafico {
-  max-width: 300px;
-  max-height: 300px;
-  width: 100%;
-  height: auto;
-  margin: auto;
-  display: block;
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--olivine) !important;
+}
+
+.navbar .nav-link {
+  color: black !important;
+}
+
+/* Footer personalizado */
+footer {
+  background-color: var(--jordy-blue) !important;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: var(--olivine);
+  text-decoration: underline;
+}
+
+footer h5 {
+  color: black;
 }
 .bg-img-login {
   background-image: url('img/running.png');
@@ -27,3 +58,4 @@ nav{
 #loginBtn {
   display: flex;
 }
+
