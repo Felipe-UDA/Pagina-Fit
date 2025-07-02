@@ -1,29 +1,54 @@
-//convertir imagen a Base64
-const toBase64 = (file) => {
+//comprimir imagen antes de convertirla a base64
+const reducirImagen = (file, maxWidth = 300, calidad = 0.5) => {
     return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement("canvas");
+                const scale = maxWidth / img.width;
+                canvas.width = maxWidth;
+                canvas.height = img.height * scale;
+
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                const base64Reducida = canvas.toDataURL("image/jpeg", calidad);
+                resolve(base64Reducida);
+            };
+            img.onerror = reject;
+            img.src = reader.result;
+        };
+        reader.onerror = reject;
     });
-}
-//registro de usuario
+};
+//registro de user imagen comprimida
 document.getElementById("registroForm").addEventListener("submit", async function(param) { 
-    param.preventDefault(); //previene que se actualice la pag
+    param.preventDefault();
     const nombre = document.getElementById("name").value;
     const apellido = document.getElementById("lastname").value;
     const correo = document.getElementById("correo").value;
     const password = document.getElementById("pass").value;
     const foto = document.getElementById("foto").files[0];
-    const foto64 = await toBase64(foto); //transformar foto a base64
-    let users = JSON.parse(localStorage.getItem("users") || "[]"); //lista de usuarios ya registrados
-    if (users.some(ue => ue.correo === correo)) { //se verifica si existe un usuario con ese correo
+    let foto64 = "";
+    if (foto) {
+        try {
+            foto64 = await reducirImagen(foto); //redimensionar y comprimir
+        } catch (err) {
+            alert("Hubo un problema al procesar la imagen.");
+            console.error(err);
+            return;
+        }
+    }
+    let users = JSON.parse(localStorage.getItem("users") || "[]");
+    if (users.some(ue => ue.correo === correo)) {
         alert("Ya existe un usuario con ese correo.");
         return;
     }
-    users.push({ nombre, apellido, correo, password, foto: foto64 }); //se guarda la info del usuario en la lista
-    localStorage.setItem("users", JSON.stringify(users)); //se sube al localStorage la info de esa lista
+    users.push({ nombre, apellido, correo, password, foto: foto64 });
+    localStorage.setItem("users", JSON.stringify(users));
     alert("Registro exitoso. Ahora puedes iniciar sesión.");
     document.getElementById("registroForm").reset();
-    window.location.href = "login.html"; //redirecciona a login
+    window.location.href = "login.html";
 });

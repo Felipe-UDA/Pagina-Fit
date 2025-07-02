@@ -1,0 +1,71 @@
+:root {
+  --oxford-blue: #011936;
+  --olivine: #9fc490;
+  --jordy-blue: #84afe6;
+  --maya-blue: #79beee;
+}
+
+/* Fondo y color general */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Navbar personalizada */
+.navbar {
+  background-color: var(--jordy-blue) !important;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--olivine) !important;
+}
+
+.navbar .nav-link {
+  color: black !important;
+}
+
+/* Títulos */
+h1,
+h2,
+h5 {
+  color: var(--maya-blue);
+}
+
+/* Cards del carrusel */
+.card {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: var(--oxford-blue);
+}
+
+.card-text {
+  color: #555;
+}
+
+/* Footer personalizado */
+footer {
+  background-color: var(--jordy-blue) !important;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: var(--olivine);
+  text-decoration: underline;
+}
+
+footer h5 {
+  color: black;
+}
