@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/nosotros.css">
+    <link rel="stylesheet" href="../css/boton_top.css">
+    <title>Acerca de Nosotros</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ZonaFit</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Rutinas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calculoimc.html">Calcular IMC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="nosotros.html">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner con video local -->
+    <div class="ban position-relative w-100">
+        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute">
+            <source src="../Multimedia/Nosotros/vid_banner.mp4" type="video/mp4">
+        </video>
+
+        <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100">
+            <h1 class="bantext text-white text-center display-1 px-3">Compite contra ti mismo, véncete todos los días</h1>
+        </div>
+    </div>
+
+    
+
+    <!-- Botón para volver arriba -->
+    <div class="go-top-container">
+        <div class="go-top-button">
+            <i class="bi bi-arrow-up-short"></i>
+        </div>
+    </div>
+
+    <footer class="text-white pt-4 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+
+                <!-- Sección: Acerca de -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">ZonaFit</h5>
+                    <p>Tu espacio para entrenar, motivarte y alcanzar tus metas con las mejores rutinas.</p>
+                </div>
+
+                <!-- Sección: Enlaces rápidos -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Inicio</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Rutinas</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Nosotros</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sección: Redes sociales -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Síguenos</h5>
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                </div>
+
+            </div>
+
+            <hr class="border-light">
+            <p class="text-center mb-0">&copy; 2025 ZonaFit. Todos los derechos reservados.</p>
+        </div>  
+    </footer>
+
+<!-- Bootstrap JS + Popper.js (requerido para el carrusel y botones) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/inicio_rutinas.js"></script>
+<script src="../js/boton_top.js"></script>
+
+</body>
+</html>
