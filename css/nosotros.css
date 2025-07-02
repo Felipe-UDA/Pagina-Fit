@@ -1,0 +1,60 @@
+:root {
+  --oxford-blue: #011936;
+  --olivine: #9fc490;
+  --jordy-blue: #84afe6;
+  --maya-blue: #79beee;
+}
+
+/*Tipografía*/
+@font-face {
+    font-family: 'Cursiva bonita';
+    src: url('../Fonts/AlexBrush-Regular.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'candy';
+    src: url('../Fonts/Candy-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'grinch';
+    src: url('../Fonts/Santa\ Grinch.otf') format('opentype'),
+         url('../Fonts/Santa\ Grinch.ttf') format('truetype'),
+         url('../Fonts/Santa\ Grinch.woff') format('woff');
+}
+@font-face {
+    font-family: 'pincelada';
+    src: url('../Fonts/Alphayouth.otf') format('opentype'),
+         url('../Fonts/Alphayouth.ttf') format('truetype');
+}
+/* Fondo y color general */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Navbar personalizada */
+.navbar {
+  background-color: var(--jordy-blue) !important;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--olivine) !important;
+}
+.ban{
+    height: 500px;
+    overflow: hidden;
+}
+.ban > video{
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+.bantext{
+    font-family: 'Cursiva bonita';
+    
+}
