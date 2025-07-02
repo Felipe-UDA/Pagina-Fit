@@ -27,21 +27,3 @@ h5 {
   color: #555;
 }
 
-/* Footer personalizado */
-footer {
-  background-color: var(--jordy-blue) !important;
-  color: white;
-}
-
-footer a {
-  color: white;
-}
-
-footer a:hover {
-  color: var(--olivine);
-  text-decoration: underline;
-}
-
-footer h5 {
-  color: black;
-}
