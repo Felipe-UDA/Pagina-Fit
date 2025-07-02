@@ -1,0 +1,31 @@
+@import url(/css/nosotros.css);
+:root {
+  --oxford-blue: #011936;
+  --olivine: #9fc490;
+  --jordy-blue: #84afe6;
+  --maya-blue: #79beee;
+}
+
+/* Fondo y color general */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Navbar personalizada */
+.navbar {
+  background-color: var(--jordy-blue) !important;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--olivine) !important;
+}
+
+.navbar .nav-link {
+  color: black !important;
+}
