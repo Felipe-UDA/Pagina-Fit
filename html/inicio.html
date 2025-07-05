@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/inicio.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/boton_top.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <title>Inicio</title>
 </head>
 <body>
@@ -57,7 +58,8 @@
             </div>
         </div>
     </section>
-
+    
+<!-- PARTE DE LAS NOTICIAS FITNES -->
     <section class="container py-5" id="rutinas-destacadas"></section>
 
     <!-- Botón para volver arriba -->
@@ -66,43 +68,19 @@
             <i class="bi bi-arrow-up-short"></i>
         </div>
     </div>
+    <!-- Aqui termina lo del Botón para volver arriba -->
+     
+<!-- FOOTER -->
+    <div id="footer-container"></div>
 
-    <footer class="text-white pt-4 pb-3 mt-5">
-        <div class="container">
-            <div class="row">
-
-                <!-- Sección: Acerca de -->
-                <div class="col-md-4 mb-3">
-                    <h5 class="fw-bold">ZonaFit</h5>
-                    <p>Tu espacio para entrenar, motivarte y alcanzar tus metas con las mejores rutinas.</p>
-                </div>
-
-                <!-- Sección: Enlaces rápidos -->
-                <div class="col-md-4 mb-3">
-                    <h5 class="fw-bold">Enlaces</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Inicio</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Rutinas</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Nosotros</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Contacto</a></li>
-                    </ul>
-                </div>
-
-                <!-- Sección: Redes sociales -->
-                <div class="col-md-4 mb-3">
-                    <h5 class="fw-bold">Síguenos</h5>
-                    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
-                    <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
-                </div>
-
-            </div>
-
-            <hr class="border-light">
-            <p class="text-center mb-0">&copy; 2025 ZonaFit. Todos los derechos reservados.</p>
-        </div>  
-    </footer>
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+  </script>
+<!-- AQUI TERMINA EL FOOTER -->
 
 <!-- Bootstrap JS + Popper.js (requerido para el carrusel y botones) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
