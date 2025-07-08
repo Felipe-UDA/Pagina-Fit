@@ -55,14 +55,11 @@ const actualizarGrafico = () => {
             }
         }
     }
-    const incompletos = total - completos;
-    const porcentajeCompletos = total === 0 ? 0 : Math.round((completos / total) * 100);
-    const porcentajeIncompletos = 100 - porcentajeCompletos;
+    let incompletos = total - completos;
+    let porcentajeCompletos = total === 0 ? 0 : Math.round((completos / total) * 100);
+    let porcentajeIncompletos = 100 - porcentajeCompletos;
     grafico.data.datasets[0].data = [completos, incompletos];
-    grafico.data.labels = [
-        `Completos (${porcentajeCompletos}%)`,
-        `Incompletos (${porcentajeIncompletos}%)`
-    ];
+    grafico.data.labels = [`Completos (${porcentajeCompletos}%)`,`Incompletos (${porcentajeIncompletos}%)`];
     grafico.update();
 };
 function getInicioSemana(date) {
@@ -127,7 +124,7 @@ const calendario = () => {
                 checkbox.addEventListener("change", () => {
                     estadoGuardado[t] = checkbox.checked;
                     localStorage.setItem(claveStorage, JSON.stringify(estadoGuardado));
-                    actualizarGrafico(); // ✅ ACTUALIZA DESPUÉS DE CAMBIAR
+                    actualizarGrafico();
                 });
                 div.appendChild(checkbox);
                 div.appendChild(label);
@@ -174,6 +171,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (user){
         document.getElementById("inicia").style.display = "none";
         document.getElementById("seguimiento").style.display = "flex";
+        document.getElementById("titulo-prog").style.display = "block"
         cargarTareasSemana();
         inicializarGrafico();
         actualizarGrafico();
@@ -181,5 +179,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }else{
         document.getElementById("inicia").style.display = "block";
         document.getElementById("seguimiento").style.display = "none";
+        document.getElementById("titulo-prog").style.display = "none"
     }
 });
