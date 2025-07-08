@@ -1,3 +1,4 @@
+/* Variables de color */
 :root {
   --oxford-blue: #011936;
   --olivine: #9fc490;
@@ -5,10 +6,10 @@
   --maya-blue: #79beee;
 }
 
-/*Tipografía*/
+/* Tipografía (mantener tus fuentes) */
 @font-face {
     font-family: 'Cursiva bonita';
-    src: url('../Fonts/AlexBrush-Regular.ttf') format('truetype'); 
+    src: url('../Fonts/AlexBrush-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -18,56 +19,67 @@
 }
 @font-face {
     font-family: 'grinch';
-    src: url('../Fonts/Santa\ Grinch.otf') format('opentype'),
-         url('../Fonts/Santa\ Grinch.ttf') format('truetype'),
-         url('../Fonts/Santa\ Grinch.woff') format('woff');
+    src: url('../Fonts/Santa Grinch.otf') format('opentype'),
+         url('../Fonts/Santa Grinch.ttf') format('truetype'),
+         url('../Fonts/Santa Grinch.woff') format('woff');
 }
 @font-face {
     font-family: 'pincelada';
     src: url('../Fonts/Alphayouth.otf') format('opentype'),
          url('../Fonts/Alphayouth.ttf') format('truetype');
 }
+
 /* Fondo y color general */
 body {
   background-color: white;
   color: black;
 }
 
+/* Estilos del banner y texto (mantener lo que ya tienes) */
 .ban{
     height: 500px;
     overflow: hidden;
 }
 .ban > video{
-    object-fit: cover;               
+    object-fit: cover;
     filter: brightness(0.7);
 }
 .bantext{
     font-family: 'Cursiva bonita';
-    
 }
-article{
-    height: auto;
-}
-article> .f1{
-    width: 100%;
-}
-.fi1{
+.fi1 {
     width: 100%;
     height: 295px;
+    object-fit: cover;
 }
-/* Estilos base para el frente y la parte trasera de las tarjetas del article */
+
+/* Estilos generales para las tarjetas (si aplica a ambos article y section) */
+.container > .card {
+    position: relative;
+    width: 100%;
+    height: 295px; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    overflow: hidden; 
+}
+
+/* Estilos para las tarjetas de ARTICLE (efecto HOVER) */
+article > .container > .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 article > .container > .card > .face {
-    position: relative; /* O absolute, según tu diseño */
-    width: 100%;       
+    position: relative;
+    width: 100%;
     height: 100%;
 }
+
 article > .container > .card > .face > .face1 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #333; /* O tu color original */
+    background: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,112 +87,92 @@ article > .container > .card > .face > .face1 {
     transform: translateY(0px);
     transition: transform 0.5s, background 0.5s;
 }
+
 article > .container > .card > .face > .face2 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--maya-blue); /* O tu color original */
+    background: #fff; 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 0;
+    z-index: 0; 
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     transform: translateY(100%);
-    transition: transform 0.5s;
+    transition: transform 0.5s, background 0.5s; 
 }
 
-/* Efectos hover y active para las tarjetas del article */
+/* Efecto al hacer HOVER sobre la tarjeta de ARTICLE */
 article > .container > .card.is-hovered > .face > .face1 {
-    background: var(--jordy-blue); /* O el color que desees al hacer hover */
-    transform: translateY(-100%); /* Efecto de volteo hacia arriba en hover */
+    transform: translateY(-100px);
+    background: var(--maya-blue); 
 }
+
 article > .container > .card.is-hovered > .face > .face2 {
-    transform: translateY(0); /* Muestra el contenido trasero en hover */
+    transform: translateY(0); 
 }
 
-/* Si usas is-active en el article, estas reglas también se aplicarán */
-article > .container > .card.is-active > .face > .face1 {
-    background: white; /* Color cuando está activo */
-}
-article > .container > .card.is-active > .face > .face2 {
-    transform: translateY(0); /* Mostrar contenido trasero cuando está activo */
-}
-/* Estilos base para las tarjetas dentro de la nueva sección */
+/* Estilos para las tarjetas de SECTION (efecto CLICK - encoger imagen y revelar info) */
 section > .container > .card {
-    position: relative;
-    width: 100%; /* O el ancho deseado */
-    height: 295px; /* O la altura deseada */
-    overflow: hidden;
-    /* Puedes añadir aquí background, box-shadow, etc. si son específicos de estas tarjetas */
+    height: 200px;
+    transition: all 0.5s ease-in-out; 
 }
 
-/* Estilos generales para las tarjetas dentro de la nueva sección */
-/* Asegúrate de que 'section > .container > .card' tenga 'position: relative; width; height; overflow: hidden;' */
-section > .container > .card {
-    position: relative;
-    width: 100%;
-    height: 295px; /* Altura de la tarjeta, ajusta si es diferente */
-    background: var(--olivine); /* O el color que prefieras para la tarjeta */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    overflow: hidden; /* Crucial para el efecto de deslizamiento */
-}
-
-/* Estilos para el frente de las tarjetas en la sección (donde está la imagen) */
 section > .container > .card > .front {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Inicialmente ocupa toda la altura de la tarjeta */
+    height: 100%; 
+    background: var(--olivine);
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #333; /* Fondo de la parte frontal */
-    z-index: 2; /* Asegura que esté por encima de la parte trasera */
-    transition: height 0.5s ease-in-out; /* Transición suave para el cambio de altura */
+    flex-direction: column;
+    z-index: 2; 
+    transition: height 0.5s ease-in-out;
 }
 
-/* Estilos para la imagen dentro del frente de la tarjeta de la sección */
-section > .container > .card > .front .fi2 {
-    max-width: 100%;
-    max-height: 100%; /* Asegura que la imagen se ajuste inicialmente */
-    object-fit: contain; /* Escala la imagen sin recortarla, manteniéndola legible */
-    transition: transform 0.5s ease-in-out; /* Transición suave para el escalado de la imagen */
+section > .container > .card > .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Estilos para la parte trasera de las tarjetas en la sección (donde está la información) */
 section > .container > .card > .back {
     position: absolute;
-    top: 100%; /* Inicialmente oculta, debajo de la tarjeta */
+    top: 100%; 
     left: 0;
     width: 100%;
-    height: 100%; /* Ocupará el resto del espacio cuando se revele */
-    background: #fff; /* Fondo de la parte trasera */
+    height: 100%;
+    background: var(--jordy-blue);
+    color: black;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* Organiza el contenido en columna */
-    justify-content: flex-start; /* Alinea el contenido hacia arriba */
-    align-items: center; /* Centra horizontalmente */
-    z-index: 1; /* Estará debajo de la parte frontal inicialmente */
-    transition: top 0.5s ease-in-out, height 0.5s ease-in-out; /* Transición suave para el movimiento */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1; 
+    transition: top 0.5s ease-in-out, height 0.5s ease-in-out; 
 }
 
-/* Estilos cuando la tarjeta de la sección está 'revelada' (después de hacer clic) */
+/* Estilos cuando la tarjeta de la sección tiene la clase 'is-revealed' (después de hacer clic) */
 section > .container > .card.is-revealed > .front {
-    height: 30%; /* El frente se encoge a un 30% de la altura de la tarjeta */
+    height: 30%;
 }
 
-section > .container > .card.is-revealed > .front .fi2 {
+section > .container > .card.is-revealed > .front img {
     transform: scale(0.7); /* La imagen se encoge visualmente un 30% */
-    /* Ajusta este valor (e.g., scale(0.5)) si quieres que la imagen se vea más pequeña */
 }
 
 section > .container > .card.is-revealed > .back {
-    top: 30%; /* La parte trasera se mueve para empezar justo debajo del frente encogido */
-    height: 70%; /* Ocupa el 70% restante de la altura de la tarjeta */
+    top: 30%;
+    height: 70%;
+    z-index: 3;
 }
