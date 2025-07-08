@@ -25,10 +25,13 @@
     background-color: #e9ecef;
 }
 #calendarioSemanal .hoy {
-    background-color: #198754;
+    background-color: var(--maya-blue);
     color: white;
     font-weight: bold;
 }
 #calendarioSemanal .seleccionado {
-    border: 2px solid #198754;
+    border: 2px solid var(--maya-blue);
+}
+#titulo-prog{
+  display: none;
 }
