@@ -58,4 +58,6 @@ footer h5 {
 #loginBtn {
   display: flex;
 }
-
+.color{
+  color: var(--maya-blue);
+}
