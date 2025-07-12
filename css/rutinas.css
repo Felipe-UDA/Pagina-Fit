@@ -1,0 +1,263 @@
+/* Variables CSS */
+:root {
+    --oxford-blue: #011936;
+    --olivine: #9fc490;
+    --jordy-blue: #84afe6;
+    --maya-blue: #79beee;
+}
+
+/* Títulos */
+h1,
+h2,
+h5 {
+    color: var(--maya-blue);
+}
+
+/* Estilos de Bootstrap sobrescritos (si es necesario) */
+.bg-body-tertiary {
+    background-color: #79beee !important; /* También correcto, pero sin usar la variable */
+}
+
+/* Sección de promoción (del css1) */
+.promo-section {
+    background-color: #011936ff; /* oxford blue */
+    min-height: 500px;
+    padding: 60px 0;
+}
+
+.promo-image {
+    background-image: url('../Multimedia/Inicio/personal_trainer.jpg'); /* Cambia a tu ruta */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    border-radius: 10px;
+}
+
+/* Estilos para el login/usuario en el navbar (del css1) */
+#userDropdown {
+    display: none;
+}
+#loginBtn {
+    display: flex;
+}
+
+/* Cards del carrusel (comentario del css1) */
+/* Añade aquí los estilos para las cards del carrusel si los tienes */
+
+
+
+
+/* Estilos Generales del Cuerpo y Calendario (del css2) */
+body {
+    font-family: Arial, sans-serif;
+    display: flex; /* Mantener body como flex para sticky footer */
+    flex-direction: column; /* Mantener body como flex para sticky footer */
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura */
+    margin: 0; /* Elimina márgenes predeterminados del body */
+    padding: 0; /* Elimina padding predeterminados del body */
+    background-color: #f4f4f4; /* El fondo general de la página */
+}
+
+.calendar-container {
+    width: 90%;
+    max-width: 900px; /* Incrementado para un calendario más grande, según tu deseo */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto; /* Centra el calendario horizontalmente */
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-weekdays, .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.calendar-weekdays span {
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.calendar-day {
+    padding: 15px 0; /* Mantenemos un padding general */
+    border: 1px solid #eee;
+    cursor: pointer;
+    position: relative; /* Muy importante para posicionar elementos dentro */
+    min-height: 80px; /* Asegura que haya suficiente espacio vertical */
+    overflow: hidden; /* Asegura que el contenido interno no se desborde */
+    font-size: 0; /* Oculta el texto original del div */
+}
+
+/* Para centrar el número en la esquina superior izquierda */
+.calendar-day::before {
+    content: attr(data-day); /* Usa un atributo de datos para mostrar el número */
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 0.9em; /* Tamaño un poco más pequeño para el número */
+    font-weight: bold;
+    color: #555;
+    z-index: 1; /* Asegura que el número esté por encima de otros elementos si los hubiera */
+}
+
+/* Ajusta el padding para los días del mes actual para que los eventos puedan fluir */
+.calendar-day.current-month {
+    background-color: #f9f9f9;
+    /* Ajusta el padding para que el contenido de las rutinas no se superponga con el número */
+    padding-top: 25px; /* Deja espacio para el número en la parte superior */
+    text-align: center; /* Centra el contenido general del día (si hay texto después del número) */
+}
+
+/* La bolita de rutina sigue igual, pero ahora tiene espacio */
+.calendar-day.has-routine::after {
+    content: '•';
+    color: green;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    line-height: 1; /* Asegura que no ocupe demasiado espacio vertical */
+}
+
+/* Días de otros meses (para rellenar el grid) */
+.calendar-day.other-month {
+    background-color: #e0e0e0; /* Color diferente para días de otros meses */
+    visibility: hidden; /* Oculta el texto y el borde para días vacíos, pero mantiene la estructura */
+    border: none; /* Sin borde para días ocultos */
+}
+
+
+.routine-details {
+    margin-top: 30px;
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#routineList li {
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#routineForm label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#routineForm input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#routineForm button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#searchResults li {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px dashed #eee;
+}
+
+#searchResults li:hover {
+    background-color: #f0f0f0;
+}
+
+#selectedExercisesList li {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 5px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+}
+
+#selectedExercisesList button {
+    background: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+}

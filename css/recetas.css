@@ -1,0 +1,174 @@
+/* Estilos generales de la sección (mantener) */
+#seccion-recetas {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#seccion-recetas h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Estilos del contenedor del carrusel (mantener, o ajustar max-width si lo deseas) */
+.carousel-container {
+    position: relative;
+    width: 90%; /* Ajusta el ancho según tu diseño */
+    max-width: 1200px; /* Puedes probar con 1000px o el que mejor se ajuste */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+/* Estilos de la pista del carrusel */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding: 0 20px; /* Importante: este padding crea un espacio visual a los lados */
+    /* ¡Nuevo! Permite que el track se estire para contener todas las cartas */
+    width: fit-content; /* O width: max-content; */
+    /* ¡Nuevo! Alinea las cartas al inicio del track */
+    justify-content: flex-start;
+}
+
+/* Estilos de cada carta de receta */
+.receta-card {
+    /* Ajusta el ancho para que quepan 2 o 3 cartas en una vista, dependiendo del contenedor */
+    /* Vamos a usar un ancho fijo y flexible para que no sean "demasiado grandes" */
+    width: 300px; /* Un ancho fijo inicial, luego flex lo ajusta */
+    flex-shrink: 0; /* ¡Crucial! Evita que las cartas se encojan más allá de su width */
+    margin: 0 10px; /* Espacio entre las cartas (10px a cada lado = 20px de gap total entre ellas) */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.receta-card:hover {
+    transform: translateY(-5px);
+}
+
+.receta-card img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la carta */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.receta-card h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.receta-card h4 {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.receta-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 120px; /* Asegura que la lista de ingredientes no crezca demasiado */
+}
+
+.receta-card ul li {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.receta-card a {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.receta-card a:hover {
+    background-color: #218838;
+}
+
+/* Estilos para los botones de navegación del carrusel (mantener) */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Media Queries para responsividad (ajustar si es necesario) */
+@media (max-width: 768px) {
+    .receta-card {
+        width: calc(50% - 20px); /* Dos cartas por fila en pantallas medianas */
+        max-width: 300px; /* Para asegurar que no sean demasiado grandes */
+    }
+    .carousel-button {
+        padding: 8px 12px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .receta-card {
+        width: calc(100% - 20px); /* Una carta por fila en pantallas pequeñas */
+        max-width: 300px;
+    }
+    .carousel-track {
+        padding: 0 10px; /* Reducir padding en móviles */
+    }
+    .carousel-button {
+        padding: 5px 8px;
+        font-size: 1em;
+    }
+}
