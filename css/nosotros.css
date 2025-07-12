@@ -29,13 +29,7 @@
          url('../Fonts/Alphayouth.ttf') format('truetype');
 }
 
-/* Fondo y color general */
-body {
-  background-color: white;
-  color: black;
-}
-
-/* Estilos del banner y texto (mantener lo que ya tienes) */
+/* Estilos del banner y texto  */
 .ban{
     height: 500px;
     overflow: hidden;
@@ -46,131 +40,187 @@ body {
 }
 .bantext{
     font-family: 'Cursiva bonita';
+    margin-top: 170px;
 }
-.fi1 {
+.fi1, .fi{
     width: 100%;
-    height: 295px;
-    object-fit: cover;
+    height: 400px;
 }
-
-/* Estilos generales para las tarjetas (si aplica a ambos article y section) */
-.container > .card {
+.fi2 {
+    width: 70%;
+    height: 400px;
+    object-fit: contain;
+}
+/* Estilos para las tarjetas de Misión y Visión */
+article .card {
     position: relative;
-    width: 100%;
-    height: 295px; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    overflow: hidden; 
+    overflow: hidden;
+    height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Estilos para las tarjetas de ARTICLE (efecto HOVER) */
-article > .container > .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-article > .container > .card > .face {
-    position: relative;
-    width: 100%;
+article .card .up {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
     height: 100%;
-}
-
-article > .container > .card > .face > .face1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #333;
+    transition: transform 0.5s ease-in-out;
+    z-index: 2; 
+    background-color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 1;
-    transform: translateY(0px);
-    transition: transform 0.5s, background 0.5s;
+    align-items: center; 
+    flex-direction: column;
 }
 
-article > .container > .card > .face > .face2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff; 
-    display: flex;
+article .card .up img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+article .card .down {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: var(--jordy-blue);
+    color: white; 
+    display: flex; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    transform: translateY(100%);
-    transition: transform 0.5s, background 0.5s; 
+    padding-top: 50px;
+    z-index: 0;
+}
+article .card .down p{
+    text-align: justify;
 }
 
-/* Efecto al hacer HOVER sobre la tarjeta de ARTICLE */
-article > .container > .card.is-hovered > .face > .face1 {
-    transform: translateY(-100px);
-    background: var(--maya-blue); 
+/* Estilos sección descripción de trabajo "equipo" */
+section .card.sc{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 590px;
+    box-shadow: 12px 0 8px rgba(0, 0, 0, 0.5);
+    border: none;
 }
-
-article > .container > .card.is-hovered > .face > .face2 {
-    transform: translateY(0); 
-}
-
-/* Estilos para las tarjetas de SECTION (efecto CLICK - encoger imagen y revelar info) */
-section > .container > .card {
-    height: 200px;
-    transition: all 0.5s ease-in-out; 
-}
-
-section > .container > .card > .front {
+section .card.sc .front{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; 
-    background: var(--olivine);
+    height: 100%;
+    z-index: 2;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    z-index: 2; 
-    transition: height 0.5s ease-in-out;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    border: none;
 }
-
-section > .container > .card > .front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+section .card.sc .front img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     transition: transform 0.5s ease-in-out;
 }
-
-section > .container > .card > .back {
+section .card.sc .back{
     position: absolute;
-    top: 100%; 
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--jordy-blue);
-    color: black;
-    padding: 20px;
-    box-sizing: border-box;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    background-color: var(--maya-blue);
+    color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    z-index: 1; 
-    transition: top 0.5s ease-in-out, height 0.5s ease-in-out; 
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease-in-out;
+}
+/* Estado cuando la tarjeta está activa (después del clic) */
+section .card.sc.is-active .front {
+    pointer-events: none;
+    transform: scale(1) translate(5%, 5%);
+    width: 17%;
+    height: 21%;
+    opacity: 1;
 }
 
-/* Estilos cuando la tarjeta de la sección tiene la clase 'is-revealed' (después de hacer clic) */
-section > .container > .card.is-revealed > .front {
-    height: 30%;
+section .card.sc.is-active .front img {
+    transform: scale(1.3) translate(-12%, -10%);
+    width: 800px;
+    height: 88px;
+    transform-origin: top left;
 }
 
-section > .container > .card.is-revealed > .front img {
-    transform: scale(0.7); /* La imagen se encoge visualmente un 30% */
+section .card.sc.is-active .back {
+    opacity: 1;
+    pointer-events: auto;
+}
+section .card.sc .back .card-group {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:center;
+    gap: 10px;
+    width: 100%;
+    height: 85%;
+    max-width: 100%;
+    margin-top: 14%;
+    align-content: flex-start;
+    align-items: stretch;
+    padding: 0;
 }
 
-section > .container > .card.is-revealed > .back {
-    top: 30%;
-    height: 70%;
-    z-index: 3;
+section .card.sc .back .card-group .card {
+    flex: 0 1 calc(25% - 5px);
+    max-width: calc(30% - 5px);
+    min-height: 100px;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--olivine);
+    color: #ffffff;
+}
+section .card.sc .back .card-group .card fieldset {
+    border: var(--oxford-blue) 2px dotted;
+    border-radius: 12px;
+    padding: 0;
+    height: 92%;
+}
+section .card.sc .back .card-group .card .card-title {
+    padding: 0 !important;
+}
+section .card.sc .back .card-group .card .card-body{
+    font-size: 90%;
+}
+/* Media query para pantallas más pequeñas*/
+@media (max-width: 768px) {
+    section .card.sc {
+        height: auto; /* Permite que la altura se ajuste en móviles */
+    }
+    section .card.sc .back {
+        padding-top: 30px; /* Ajusta el padding superior para móviles si es necesario */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    section .card.sc .back .card-group .card {
+        flex: 0 1 1 1 100%; /* Una columna en pantallas pequeñas */
+        max-width: 100%;
+        min-height: auto;
+    }
 }

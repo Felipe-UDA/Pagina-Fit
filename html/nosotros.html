@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/boton_top.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/nosotros.css">
     <title>Acerca de Nosotros</title>
 </head>
@@ -23,7 +24,7 @@
                         <a class="nav-link" href="inicio.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Rutinas</a>
+                        <a class="nav-link" href="rutinas.html">Rutinas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="calculoimc.html">Calcular IMC</a>
@@ -41,143 +42,168 @@
         <video autoplay muted loop playsinline class="w-100 position-absolute">
             <source src="../Multimedia/Nosotros/vid_banner.mp4" type="video/mp4">
         </video>
-
         <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100">
-            <h1 class="bantext text-white text-center display-4 px-3">Compite contra ti mismo, véncete todos los días</h1>
+            <h1 class="bantext text-white text-center display-4 px-3 ">Compite contra ti mismo, véncete todos los días</h1>
         </div>
     </div>
 
-    <article class="container-xl mt-3 gap-3">
-        <div class="row f1">
-            <div class="col">
-                <div class="container">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <img class="fi1" src="../img/1.png" alt="Missón">
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <h3>Misión</h3>
-                                <p>Nuestra misión es empoderar a las personas a iniciar y mantener un estilo 
-                                    de vida activo y saludable, ofreciendo herramientas accesibles y personalizadas 
-                                    como rutinas de entrenamiento, calculadoras de IMC y seguimiento de progreso, 
-                                    para que cada usuario alcance sus metas de bienestar físico.</p>
-                            </div>
-                        </div>
+    <!-- Misión y visión de la página -->
+    <article class="container-xl py-5">
+        <div class="row align-items-center justify-content-center gap-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="up">
+                        <img class="fi" src="../img/1.png" alt="Missón">
+                    </div>
+                    <div class="down p-3">
+                        <h3 class="text-center">Misión</h3>
+                        <p>Nuestra misión es empoderar a las personas a iniciar y mantener
+                            un estilo de vida activo y saludable, ofreciendo herramientas accesibles y 
+                            personalizadas como rutinas de entrenamiento, calculadoras de IMC y seguimiento de 
+                            progreso,para que cada usuario alcance sus metas de bienestar físico.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="container">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <img class="fi1" src="../img/2.png" alt="Visión">
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <h3>Visión</h3>
-                                <p>Ser la comunidad de fitness online de referencia, 
-                                    reconocida por su facilidad de uso y su impacto 
-                                    positivo en la motivación y el progreso de sus 
-                                    usuarios, inspirando a más personas a hacer del 
-                                    entrenamiento una parte constante y disfrutable 
-                                    de sus vidas.</p>
-                            </div>
-                        </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="up">
+                        <img class="fi1" src="../img/2.png" alt="Visión">
+                    </div>
+                    <div class="down p-3">
+                        <h3 class="text-center">Visión</h3>
+                        <p>Ser la comunidad de fitness online de referencia, reconocida 
+                            por su facilidad de uso y su impacto positivo en la motivación y el progreso de 
+                            sus usuarios, inspirando a más personas a hacer delentrenamiento una parte 
+                            constante y disfrutable de sus vidas.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </article>
+
+    <!-- Sección de descripción del equipo de trabajo -->
     <section class="container-xl py-5">
-        <div class="row gap-2">
-            <div class="col justify-content-center">
-                <div class="container">
+        <div class="card sc">
+            <div class="front">
+                <img class="fi2" src="../img/3.png" alt="Personal">
+            </div>
+            <div class="back">
+                <div class="card-group">
                     <div class="card">
-                        <div class="front">
-                            <div class="content">
-                                <img class="fi2" src="../img/3.png" alt="Personal">
-                            </div>
+                        <div class="card-body">
+                            <fieldset>
+                                <div class="card-title text-center p-3">Carlos Mendoza</div>
+                                <dl class="row p-2">
+                                    <dt class="col-sm-4">Cargo:</dt>
+                                    <dd class="col-sm-8">Jefe de Contenido</dd>
+                                    <dt class="col-sm-4">Función:</dt>
+                                    <dd class="col-sm-8">
+                                        <p>Responsable de la estrategia de contenidos.</p>
+                                    </dd>
+                                    <dt class="col-sm-4">Se encarga de:</dt>
+                                    <dd class="col-sm-8">
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Supervisar la creación de artículos sobre entrenamiento, nutrición y bienestar.</dd>
+                                        </dl>
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Coordinar a redactores y editores.</dd>
+                                        </dl>
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Asegurar que el tono del contenido sea coherente y motivador.</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </fieldset>
                         </div>
-                        <div class="back">
-                            <div class="content">
-                                <div class="card-group">
-                                    <div class="card">
-                                        <fieldset><div class="card-title">Carlos Mendoza</div></fieldset>
-                                        <div class="card-body">
-                                            <ul>
-                                                <li>Cargo: <p>Jefe de Contenido</p></li>
-                                                <li>Función: <p>Responsable de la estrategia de contenidos.</p></li>
-                                                <li>Se encarga de:
-                                                    <ul>
-                                                        <li>Supervisa la creación de artículos sobre entrenamiento, nutrición y bienestar.</li>
-                                                        <li>Coordinar a redactores y editores.</li>
-                                                        <li>Asegurar que el tono del contenido sea coherente y motivador.</li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <fieldset><div class="card-title">Sofía Torres</div></fieldset>
-                                        <div class="card-body">
-                                            <ul>
-                                                <li>Cargo: <p></p></li>
-                                                <li>Función: <p>Estrategia de marketing digital.</p></li>
-                                                <li>Se encarga de:
-                                                    <ul>
-                                                        <li>Planifica campañas publicitarias en redes sociales y Google Ads.</li>
-                                                        <li>Analiza el tráfico web y propone mejoras.</li>
-                                                        <li>Coordina colaboraciones con influencers del mundo fitness.</li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <fieldset><div class="card-title">Daniel Ortega</div></fieldset>
-                                        <div class="card-body">
-                                            <ul>
-                                                <li>Cargo: <p>Community Manager</p></li>
-                                                <li>Función: <p>Gestor de comunidad y comunicación</p></li>
-                                                <li>Se encarga de:
-                                                    <ul>
-                                                        <li>Supervise la creación de artículos sobre entrenamiento, nutrición y bienestar.</li>
-                                                        <li>Coordinar a redactores y editores.</li>
-                                                        <li>Asegúrese de que el tono del contenido sea coherente y motivador.</li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <fieldset><div class="card-title">Aba Lucía Fernández</div></fieldset>
-                                        <div class="card-body">
-                                            <ul>
-                                                <li>Cargo: <p>Líder de atención al cliente</p></li>
-                                                <li>Función: <p>Líder de soporte al usuario</p></li>
-                                                <li>Se encarga de:
-                                                    <ul>
-                                                        <li>Supervise la creación de artículos sobre entrenamiento, nutrición y bienestar.</li>
-                                                        <li>Coordinar a redactores y editores.</li>
-                                                        <li>Asegúrese de que el tono del contenido sea coherente y motivador.</li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <fieldset>
+                                <div class="card-title text-center p-3">Sofía Torres</div>
+                                <dl class="row p-2">
+                                    <dt class="col-sm-4">Cargo:</dt>
+                                    <dd class="col-sm-8">Estratega marketing digital.</dd>
+                                    <dt class="col-sm-4">Función:</dt>
+                                    <dd class="col-sm-8">
+                                        <p>Responsable de la estrategia de contenidos.</p>
+                                    </dd>
+                                    <dt class="col-sm-4">Se encarga de:</dt>
+                                    <dd class="col-sm-8">
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Planificar campañas publicitarias en redes sociales y Google Ads.</dd>
+                                        </dl>
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Analizar el tráfico web y propone mejoras.</dd>
+                                        </dl>
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Coordinar colaboraciones con influencers del mundo fitness.</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <fieldset>
+                                <div class="card-title text-center p-3">Daniel Ortega</div>
+                                <dl class="row p-2">
+                                    <dt class="col-sm-4">Cargo:</dt>
+                                    <dd class="col-sm-8">Community Manager</dd>
+                                    <dt class="col-sm-4">Función:</dt>
+                                    <dd class="col-sm-8">
+                                        <p>Gestor de comunidad y comunicación.</p>
+                                    </dd>
+                                    <dt class="col-sm-4">Se encarga de:</dt>
+                                    <dd class="col-sm-8">
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Administrar las redes sociales y responde comentarios.</dd>
+                                        </dl>
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Organizar concursos, retos y dinámicas para involucrar a los usuarios.</dd>
+                                        </dl>
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Escuchar a la audiencia y transmite sus inquietudes al equipo.</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <fieldset>
+                                <div class="card-title text-center p-3">Ana Lucía Fernández</div> 
+                                <dl class="row p-2">
+                                    <dt class="col-sm-4">Cargo:</dt>
+                                    <dd class="col-sm-8">Community Manager</dd>
+                                    <dt class="col-sm-4">Función:</dt>
+                                    <dd class="col-sm-8">
+                                        <p>Gestor de comunidad y comunicación.</p>
+                                    </dd>
+                                    <dt class="col-sm-4">Se encarga de:</dt>
+                                    <dd class="col-sm-8">
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Administrar las redes sociales y responde comentarios.</dd>
+                                        </dl>
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Organizar concursos, retos y dinámicas para involucrar a los usuarios.</dd>
+                                        </dl>
+                                        <dl class="row">
+                                            <dd class="col-sm-12">Escuchar a la audiencia y transmite sus inquietudes al equipo.</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Botón para volver arriba -->
     <div class="go-top-container">
         <div class="go-top-button">
@@ -187,12 +213,20 @@
 
 <!-- FOOTER -->
     <div id="footer-container"></div>
-
     <script>
-        fetch("footer.html")
-        .then(response => response.text())
+        fetch("./footer.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error HTTP: ${response.status} - No se pudo cargar el footer.`);
+            }
+            return response.text();
+        })
         .then(data => {
             document.getElementById("footer-container").innerHTML = data;
+        })
+        .catch(error => {
+            console.error("Hubo un problema con la operación fetch del footer:", error);
+            document.getElementById("footer-container").innerHTML = "<p style='color: red; text-align: center;'>Error al cargar el footer.</p>";
         });
     </script>
 <!-- AQUI TERMINA EL FOOTER -->

@@ -1,25 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const articleCards = document.querySelectorAll('article .container .card');
+    function setupMissionVisionCards() {
+        const cards = document.querySelectorAll('article .card');
 
-    articleCards.forEach(card => {
-        
-        card.addEventListener('mouseover', () => {
-            card.classList.add('is-hovered');
+        cards.forEach(card => {
+            const upElement = card.querySelector('.up');
+
+            card.addEventListener('mouseover', () => {
+                upElement.style.transform = 'translateY(-100%)';
+            });
+
+            card.addEventListener('mouseout', () => {
+                upElement.style.transform = 'translateY(0)';
+            });
         });
+    }
 
-        card.addEventListener('mouseout', () => {
-            card.classList.remove('is-hovered');
-        });
-    });
+    setupMissionVisionCards();
+     
+    function setupTeamCardInteraction() {
+        const teamCard = document.querySelector('section .card.sc');
 
-    const sectionCardImages = document.querySelectorAll('section .container .card .front img');
+        if (teamCard) {
+            const frontElement = teamCard.querySelector('.front');
 
-    sectionCardImages.forEach(image => {
-        image.addEventListener('click', () => {
-            const card = image.closest('.card');
-            if (card) {
-                card.classList.toggle('is-revealed');
+            if (frontElement) {
+                frontElement.addEventListener('click', () => {
+                    teamCard.classList.toggle('is-active');
+                });
             }
-        });
-    });
+
+            document.addEventListener('click', (event) => {
+                if (teamCard.classList.contains('is-active') && !teamCard.contains(event.target)) {
+                    teamCard.classList.remove('is-active');
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                if (teamCard.classList.contains('is-active')) {
+                    teamCard.classList.remove('is-active');
+                }
+            });
+        };
+    };    
+
+    setupTeamCardInteraction();
 });
