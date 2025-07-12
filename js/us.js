@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    AOS.init();
+    
     function setupMissionVisionCards() {
         const cards = document.querySelectorAll('article .card');
 

@@ -14,18 +14,5 @@ body {
 
 /* Navbar personalizada */
 .navbar {
-  background-color: var(--jordy-blue) !important;
-}
-
-.navbar .nav-link {
-  color: white !important;
-}
-
-.navbar .nav-link.active,
-.navbar .nav-link:hover {
-  color: var(--olivine) !important;
-}
-
-.navbar .nav-link {
-  color: black !important;
+  background-color: var(--maya-blue) !important;
 }
