@@ -26,6 +26,9 @@
     gap: 20px;
     margin-bottom: 30px;
 }
+.gender i{
+    font-size: 40px;
+}
 .gender div {
     flex: 1;
     text-align: center;
@@ -36,10 +39,8 @@
 }
 .gender div.selected {
     border-color: var(--maya-blue);
-}
-.gender img {
-    width: 60px;
-    height: 60px;
+    color: var(--maya-blue);
+    transition: all 0.3s ease;
 }
 label {
     font-weight: 600;
@@ -125,6 +126,7 @@ button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 500px;
   color: white;
   padding: 3rem 2rem;
 }
@@ -141,4 +143,17 @@ button {
 #infoInicial {
   position: relative;
   z-index: 2;
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.5s ease forwards;
 }
