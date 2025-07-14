@@ -1,3 +1,4 @@
+//se agrega clase seleccionado según sexo elegido
 document.getElementById("masculino").onclick = () => {
     document.getElementById("masculino").classList.add("selected");
     document.getElementById("femenino").classList.remove("selected");
@@ -6,14 +7,18 @@ document.getElementById("femenino").onclick = () => {
     document.getElementById("femenino").classList.add("selected");
     document.getElementById("masculino").classList.remove("selected");
 };
+//se agrega los valores de los range a los input number
 peso.oninput = () => pesoRange.value = peso.value;
 pesoRange.oninput = () => peso.value = pesoRange.value;
 altura.oninput = () => alturaRange.value = altura.value;
 alturaRange.oninput = () => altura.value = alturaRange.value;
-function calcularIMC() {
-    const pesoVal = parseFloat(document.getElementById("peso").value);
-    const alturaVal = parseFloat(document.getElementById("altura").value);
-    const imc = (pesoVal / (alturaVal * alturaVal)).toFixed(1);
+
+//funcion para calcular imc
+const calcularIMC = () => {
+    const pesoVal = parseFloat(document.getElementById("peso").value); //se obtiene peso
+    const alturaVal = parseFloat(document.getElementById("altura").value); //se obtiene altura
+    const imc = (pesoVal / (alturaVal * alturaVal)).toFixed(1); //calculo imc redondeando
+    //rellenado de div para mostrar los resultados
     const resultadoDiv = document.getElementById("resultado");
     const formulario = document.getElementById("formulario");
     resultadoDiv.innerHTML = '';
@@ -25,6 +30,7 @@ function calcularIMC() {
     const pointer = document.createElement("div");
     pointer.className = "arrow-pointer";
     pointer.innerHTML = '<span></span>';
+    //porcentaje para pointer segun imc
     if (imc < 18.5) pointer.style.marginLeft = '0%';
     else if (imc < 25) pointer.style.marginLeft = '25%';
     else if (imc < 30) pointer.style.marginLeft = '50%';
@@ -38,12 +44,13 @@ function calcularIMC() {
     <div class="sobrepeso">Sobrepeso</div>
     <div class="obesidad">Obesidad</div>
     `;
-    const alturaCm = alturaVal * 100;
+    //calculo de rango ideal segun altura y peso
     const minPeso = (18.5 * alturaVal * alturaVal).toFixed(0);
     const maxPeso = (24.9 * alturaVal * alturaVal).toFixed(0);
     const rango = document.createElement("p");
     rango.innerHTML = `Su rango de peso saludable sugerido es de <strong>${minPeso} a ${maxPeso} kg</strong>.`;
     let mensaje = document.createElement("p");
+    //mensajes según resultado de imc (desde bajo peso a obesidad)
     if (imc < 18.5) mensaje.textContent = "La delgadez puede deberse a diversos factores, tales como genéticos y dietéticos. Independiente de su causa, es importante para tu bienestar mantener un peso saludable.";
     else if (imc < 25) mensaje.textContent = "El equilibrio del organismo -su homeostasis- se obtiene con mayor facilidad si el peso de una persona es normal. Una dieta balanceada y ejercicio ayudan a mantenerse en esta categoría.";
     else if (imc < 30) mensaje.textContent = "Una mala alimentación y hábitos sedentarios pueden contribuir a acumular grasa en tu cuerpo, lo que puede llevar a problemas médicos en el futuro.";
@@ -51,7 +58,8 @@ function calcularIMC() {
     const btnVolver = document.createElement("button");
     btnVolver.textContent = "VOLVER A CALCULAR";
     btnVolver.className = "btn btn-outline-secondary mt-3";
-    btnVolver.onclick = volver;
+    btnVolver.onclick = volver; //asignar funcion volver a calcular en btn
+    //se agregan las variables creadas al div resuiltado
     resultadoDiv.appendChild(tag);
     resultadoDiv.appendChild(arrow);
     resultadoDiv.appendChild(bar);
@@ -60,8 +68,23 @@ function calcularIMC() {
     resultadoDiv.appendChild(btnVolver);
     resultadoDiv.style.display = "block";
     formulario.style.display = "none";
+    resultadoDiv.classList.remove("fade-up"); //quitar animación si ya existe
+    void resultadoDiv.offsetWidth;
+    resultadoDiv.classList.add("fade-up");
+};
+
+//funcion de volver al div calculadora imc
+const volver = () => {
+    const resultadoDiv = document.getElementById("resultado");
+    const formulario = document.getElementById("formulario");
+    resultadoDiv.style.display = "none";
+    formulario.style.display = "block";
+    formulario.classList.remove("fade-up"); //quitar animación si ya existe
+    void formulario.offsetWidth;
+    formulario.classList.add("fade-up"); //aplicar animación
 }
-function volver() {
-    document.getElementById("resultado").style.display = "none";
-    document.getElementById("formulario").style.display = "block";
+//cuando cargue la pagina
+window.onload = () =>{
+    const div = document.getElementById("imc");
+    div.classList.add("fade-up");
 }
