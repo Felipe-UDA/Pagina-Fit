@@ -4,7 +4,7 @@ let totalCards = 0;
 let cardsPerView = 0; // Cuántas cartas son visibles en la pantalla
 
 async function obtenerRecetasFitnessSpoonacular() {
-    const API_KEY = 'cfed28d805e24762b2f254f78424d9a5'; // ¡REEMPLAZA ESTO!
+    const API_KEY = 'cfed28d805e24762b2f254f78424d9a5'; // 
     const query = 'healthy chicken';
     const dietType = 'low fat';
     const number = 15;

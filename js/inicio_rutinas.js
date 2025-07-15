@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentDisplayedNews = pageSize; // Inicialmente se muestran 3 noticias
 
     const newsContainer = document.getElementById("news-cards-container");
-    const toggleButton = document.getElementById("toggle-news-button"); // Solo un botón para "Ver más" / "Ver menos"
+    const toggleButton = document.getElementById("toggle-news-button"); // boton para "Ver más" / "Ver menos"
 
     if (!newsContainer) {
         console.error("El contenedor de noticias no fue encontrado en el DOM.");
