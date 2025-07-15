@@ -15,28 +15,43 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">ZonaFit</a>
+            <a class="navbar-brand" href="inicio.html">ZonaFit</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="inicio.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="rutinas.html">Rutinas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="seguimiento.html">Mis rutinas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calculoimc.html">Calcular IMC</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a>
+                            <a class="nav-link" href="inicio.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rutinas.html">Rutinas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="seguimiento.html">Mis rutinas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculoimc.html">Calcular IMC</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"  href="nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQ</a>
+                        </li>
                     </li>
                 </ul>
+            </div>
+            <div class="d-flex align-items-center">
+                <a href="login.html" class="btn btn-outline-light me-2" id="loginBtn">Iniciar sesión</a>
+                <div class="dropdown" id="userDropdown">
+                    <div class="d-flex align-items-center text-white dropdown-toggle me-2" role="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+                        <img src="" alt="Perfil" id="userImage" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
+                        <span id="userName"></span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><button class="dropdown-item text-danger" id="botonSalir">Cerrar sesión</button></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -240,6 +255,7 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="../js/boton_top.js"></script>
 <script src="../js/us.js"></script>
+<script src="../js/usuario.js"></script>
 
 </body>
 </html>
