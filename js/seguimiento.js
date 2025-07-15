@@ -10,7 +10,6 @@ const buscarApi = async (id) => {
         });
         if (!response.ok) throw new Error("Error al consultar la API.");
         const ejercicio = await response.json();
-        console.log(ejercicio);
         return ejercicio;
     }catch(error){
         console.error("Error: "+error);
@@ -529,12 +528,10 @@ const eliminar = () => {
     const rutinasGuardadas = JSON.parse(localStorage.getItem("rutinas")) || [];
     const nuevasRutinas = rutinasGuardadas.filter(r => r.usuario !== correoUsuarioActual); //rutina guardada del usuario
     localStorage.setItem("rutinas", JSON.stringify(nuevasRutinas)); //se borra del localStorage
-    console.log(`Rutina de ${correoUsuarioActual} eliminada del localStorage.`);
     for (let i = 0; i < localStorage.length; i++) { //borrar las tareas segun key
         const key = localStorage.key(i);
         if (key.startsWith(`tareas-${correoUsuarioActual}-`)) {
             localStorage.removeItem(key);
-            console.log(`Progreso de tarea eliminado: ${key}`);
         }
     }
     alert("¡Tu rutina ha sido eliminada correctamente!");

@@ -1,6 +1,7 @@
+//pagina completamente cargada
 document.addEventListener('DOMContentLoaded', () => {
-    AOS.init();
-    
+    AOS.init(); //activar animaciones
+    //efecto deslizante al pasar el mouse sobre tarjetas
     function setupMissionVisionCards() {
         const cards = document.querySelectorAll('article .card');
 
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setupMissionVisionCards();
-     
+    //activar/desactivar tarjeta de equipo
     function setupTeamCardInteraction() {
         const teamCard = document.querySelector('section .card.sc');
 
