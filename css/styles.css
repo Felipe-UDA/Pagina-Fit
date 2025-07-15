@@ -16,3 +16,10 @@ body {
 .navbar {
   background-color: var(--maya-blue) !important;
 }
+
+#userDropdown {
+  display: none;
+}
+#loginBtn {
+  display: flex;
+}

@@ -11,27 +11,21 @@ body {
   color: black;
 }
 
+.btn.btn-primary {
+  --bs-btn-bg: var(--jordy-blue);
+  --bs-btn-border-color: var(--jordy-blue);
+  --bs-btn-hover-bg: var(--olivine);
+  --bs-btn-hover-border-color: var(--olivine);
+}
+
 /* Navbar personalizada */
 .navbar {
-  background-color: var(--jordy-blue) !important;
-}
-
-.navbar .nav-link {
-  color: white !important;
-}
-
-.navbar .nav-link.active,
-.navbar .nav-link:hover {
-  color: var(--olivine) !important;
-}
-
-.navbar .nav-link {
-  color: black !important;
+  background-color: var(--maya-blue) !important;
 }
 
 /* Footer personalizado */
 footer {
-  background-color: var(--jordy-blue) !important;
+  background-color: var(--maya-blue) !important;
   color: white;
 }
 
